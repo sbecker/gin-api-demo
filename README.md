@@ -2,13 +2,20 @@
 
 An example of using the Gin framework in Go to create a JSON api with most of the core functionality a JSON api needs.
 
+== Installation
+
+```
+$ go get github.com/sbecker/gin-api-demo
+$ go get github.com/tools/godep
+```
 
 == How to run
 
 In one terminal, run the server:
 
 ```
-$ go run main.go
+$ cd $GOPATH/src/github.com/sbecker/gin-api-demo
+$ godep go run main.go
 ```
 
 In another terminal, try making requests:
@@ -54,6 +61,7 @@ $ curl -i http://localhost:8080/users/2
 - [x] token authorization middleware
 - [x] multi-level json serialization - display subset of json objects for non-admin users
 - [x] separation of concerns - models, dao, resources, serializers, authorization
+- [x] Godep for dependency management
 
 == Todo:
 - [ ] UUIDs instead of integers for primary keys
@@ -67,5 +75,4 @@ $ curl -i http://localhost:8080/users/2
 - [ ] Continuous integration
 - [ ] Continuous deployment
 - [ ] Command line interface - run server, run migrations, start db console, etc
-- [ ] Godep for dependency management
 - [ ] Env var configuration

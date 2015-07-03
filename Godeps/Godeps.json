@@ -1,0 +1,33 @@
+{
+	"ImportPath": "github.com/sbecker/gin-api-demo",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.6.4-6-g539d4dc",
+			"Rev": "539d4dc034c079a7188b5d4ca9650632d73c66e8"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin",
+			"Comment": "v1.0rc1-99-gd6425f1",
+			"Rev": "d6425f1692d4aa170ece887b62bb75c9c4da5829"
+		},
+		{
+			"ImportPath": "github.com/manucorporat/sse",
+			"Rev": "c142f0f1baea5cef7f98a8a6c222f6134368c1f5"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Rev": "d67e0b7d1797975196499f79bcc322c08b9f218b"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "3cffabab72adf04f8e3b01c5baf775361837b5fe"
+		},
+		{
+			"ImportPath": "gopkg.in/bluesuncorp/validator.v5",
+			"Comment": "v5.7.1",
+			"Rev": "df95f9de27b8022e57f8ce09448cee6b1170bb3d"
+		}
+	]
+}
