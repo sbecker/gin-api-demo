@@ -11,6 +11,7 @@ func main() {
 	dao.InitDb()
 
 	r := gin.Default()
+	r.Use(middleware.RequestId)
 	r.Use(middleware.Auth)
 
 	r.GET("/users", resources.GetAllUsers)
