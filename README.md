@@ -68,6 +68,8 @@ $ curl -i http://localhost:8080/users/2
 ## Todo:
 - [ ] JWT token authorization
 - [ ] Pagination
+- [ ] Versioning
+- [ ] Standardize error responses
 - [ ] Integration with a real database
 - [ ] Swagger live documentation
 - [ ] Godoc
