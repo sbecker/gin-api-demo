@@ -13,6 +13,7 @@ func main() {
 	r := gin.Default()
 	r.Use(middleware.RequestId)
 	r.Use(middleware.Auth)
+	r.Use(middleware.CORS)
 
 	r.GET("/users", resources.GetAllUsers)
 	r.GET("/users/:id", resources.GetUserById)
