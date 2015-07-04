@@ -9,7 +9,7 @@ import (
 func GetAllUsers(c *gin.Context) {
 	currentUser := getCurrentUser(c)
 	users := dao.GetAllUsers(currentUser)
-	c.JSON(200, serializers.SerializeUsers(users, currentUser))
+	c.JSON(200, serializers.SerializeUsers(users, currentUser, "/users"))
 }
 
 func GetUserById(c *gin.Context) {

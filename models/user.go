@@ -1,7 +1,7 @@
 package models
 
 type User struct {
-	Id           string `json:"id"`
+	DefaultModel
 	Email        string `json:"email"`
 	DOB          string `json:"dob"`
 	FavoriteCity string `json:"favorite_city"`

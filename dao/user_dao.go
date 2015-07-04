@@ -11,8 +11,8 @@ import (
 var users []models.User
 
 func InitDb() {
-	users = append(users, models.User{Id: "abc", AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
-	users = append(users, models.User{Id: "xyz", AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
+	users = append(users, models.User{DefaultModel: models.DefaultModel{Id: "abc", ObjectType: "user"}, AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
+	users = append(users, models.User{DefaultModel: models.DefaultModel{Id: "xyz", ObjectType: "user"}, AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
 }
 
 func GetAllUsers(currentUser models.User) []models.User {

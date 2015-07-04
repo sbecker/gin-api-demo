@@ -3,73 +3,67 @@ package serializers
 import "github.com/sbecker/gin-api-demo/models"
 
 type UsersJSON struct {
-	Users []models.User `json:"users"`
-}
-
-type UserJSON struct {
-	User models.User `json:"user"`
+	ListMeta
+	Values []models.User `json:"data"`
 }
 
 type UsersSubsetJSON struct {
-	Users []UserSubset `json:"users"`
-}
-
-type UserSubsetJSON struct {
-	User UserSubset `json:"user"`
+	ListMeta
+	Values []UserSubset `json:"data"`
 }
 
 type UserSubset struct {
-	Id    string `json:"id"`
+	models.DefaultModel
 	Email string `json:"email"`
 	DOB   string `json:"dob"`
 }
 
 func NewUserSubset(user models.User) UserSubset {
 	return UserSubset{
-		Id:    user.Id,
-		Email: user.Email,
-		DOB:   user.DOB,
+		DefaultModel: user.DefaultModel,
+		Email:        user.Email,
+		DOB:          user.DOB,
 	}
 }
 
-func NewUserSubsetJSON(user models.User) UserSubsetJSON {
-	return UserSubsetJSON{
-		User: UserSubset{
-			Id:    user.Id,
-			Email: user.Email,
-			DOB:   user.DOB,
+func NewUsersJSON(users []models.User, URL string) UsersJSON {
+	return UsersJSON{
+		Values: users,
+		ListMeta: ListMeta{
+			ObjectType: "list",
+			URL:        URL,
+			Count:      uint16(len(users)),
 		},
 	}
 }
 
-func NewUserJSON(user models.User) UserJSON {
-	return UserJSON{User: user}
-}
-
-func NewUsersJSON(users []models.User) UsersJSON {
-	return UsersJSON{Users: users}
-}
-
-func NewUsersSubsetJSON(users []models.User) UsersSubsetJSON {
-	json := UsersSubsetJSON{Users: []UserSubset{}}
+func NewUsersSubsetJSON(users []models.User, URL string) UsersSubsetJSON {
+	json := UsersSubsetJSON{
+		Values: []UserSubset{},
+		ListMeta: ListMeta{
+			ObjectType: "list",
+			URL:        URL,
+			Count:      uint16(len(users)),
+		},
+	}
 	for _, user := range users {
-		json.Users = append(json.Users, NewUserSubset(user))
+		json.Values = append(json.Values, NewUserSubset(user))
 	}
 	return json
 }
 
-func SerializeUsers(users []models.User, currentUser models.User) interface{} {
+func SerializeUsers(users []models.User, currentUser models.User, URL string) interface{} {
 	if currentUser.Admin {
-		return NewUsersJSON(users)
+		return NewUsersJSON(users, URL)
 	} else {
-		return NewUsersSubsetJSON(users)
+		return NewUsersSubsetJSON(users, URL)
 	}
 }
 
 func SerializeUser(user models.User, currentUser models.User) interface{} {
 	if currentUser.Admin {
-		return NewUserJSON(user)
+		return user
 	} else {
-		return NewUserSubsetJSON(user)
+		return NewUserSubset(user)
 	}
 }
