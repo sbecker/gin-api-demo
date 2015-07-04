@@ -18,6 +18,10 @@ func getIntParam(c *gin.Context, name string) (int64, error) {
 	return id, nil
 }
 
+func getStringParam(c *gin.Context, name string) (string, error) {
+	return c.Params.ByName(name), nil
+}
+
 func getCurrentUser(c *gin.Context) models.User {
 	return c.MustGet("currentUser").(models.User)
 }

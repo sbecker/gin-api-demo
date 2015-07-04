@@ -15,7 +15,7 @@ func GetAllUsers(c *gin.Context) {
 func GetUserById(c *gin.Context) {
 	currentUser := getCurrentUser(c)
 
-	id, err := getIntParam(c, "id")
+	id, err := getStringParam(c, "id")
 	if err != nil {
 		c.JSON(400, "could not parse id")
 		return

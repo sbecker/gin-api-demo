@@ -11,8 +11,8 @@ import (
 var users []models.User
 
 func InitDb() {
-	users = append(users, models.User{Id: 1, AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
-	users = append(users, models.User{Id: 2, AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
+	users = append(users, models.User{Id: "abc", AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
+	users = append(users, models.User{Id: "xyz", AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
 }
 
 func GetAllUsers(currentUser models.User) []models.User {
@@ -31,7 +31,7 @@ func GetAllUsers(currentUser models.User) []models.User {
 	return results
 }
 
-func GetUserById(id int64, currentUser models.User) (models.User, error) {
+func GetUserById(id string, currentUser models.User) (models.User, error) {
 	// if not admin, make only itself findable
 	if !currentUser.Admin {
 		for _, u := range users {
