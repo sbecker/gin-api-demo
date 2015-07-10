@@ -80,3 +80,6 @@ $ curl -i http://localhost:8080/users/2
 - [ ] Continuous deployment
 - [ ] Command line interface - run server, run migrations, start db console, etc
 - [ ] Env var configuration
+
+## Research:
+- [ ] Client side query language - a la GraphQL/Falkor/Datomic
