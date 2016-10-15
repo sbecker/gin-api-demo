@@ -1,0 +1,18 @@
+package: github.com/sbecker/gin-api-demo
+import:
+- package: github.com/pborman/uuid
+  version: 3d4f2ba23642d3cfd06bd4b54cf03d99d95c0f1b
+- package: github.com/Sirupsen/logrus
+  version: 539d4dc034c079a7188b5d4ca9650632d73c66e8
+- package: github.com/gin-gonic/gin
+  version: d6425f1692d4aa170ece887b62bb75c9c4da5829
+- package: github.com/manucorporat/sse
+  version: c142f0f1baea5cef7f98a8a6c222f6134368c1f5
+- package: github.com/mattn/go-colorable
+  version: d67e0b7d1797975196499f79bcc322c08b9f218b
+- package: golang.org/x/net
+  version: 3cffabab72adf04f8e3b01c5baf775361837b5fe
+  subpackages:
+  - context
+- package: gopkg.in/bluesuncorp/validator.v5
+  version: v5.7.1

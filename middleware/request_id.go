@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"code.google.com/p/go-uuid/uuid"
 	"github.com/gin-gonic/gin"
+	"github.com/pborman/uuid"
 )
 
 func RequestId(c *gin.Context) {
