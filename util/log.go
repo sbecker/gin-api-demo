@@ -52,7 +52,7 @@ func (f *JSONFormatter) Format(entry *log.Entry) ([]byte, error) {
 	return append(serialized, '\n'), nil
 }
 
-// clientIP gets the correct IP for the end client instead of the proxy
+// GetClientIP gets the correct IP for the end client instead of the proxy
 func GetClientIP(c *gin.Context) string {
 	// first check the X-Forwarded-For header
 	requester := c.Request.Header.Get("X-Forwarded-For")
@@ -74,7 +74,7 @@ func GetClientIP(c *gin.Context) string {
 	return requester
 }
 
-// getUserID gets the current_user ID as a string
+// GetUserID gets the current_user ID as a string
 func GetUserID(c *gin.Context) string {
 	userID, exists := c.Get("userID")
 	if exists {
@@ -83,7 +83,7 @@ func GetUserID(c *gin.Context) string {
 	return ""
 }
 
-// gets the duration of time since "start", in milliseconds
+// GetDurationInMillseconds takes a start time and returns a duration in milliseconds
 func GetDurationInMillseconds(start time.Time) float64 {
 	end := time.Now()
 	duration := end.Sub(start)
