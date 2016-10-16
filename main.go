@@ -10,9 +10,11 @@ import (
 )
 
 func main() {
+	util.LoadEnvVars()
+	util.UseJSONLogFormat()
+
 	dao.InitDb()
 
-	util.UseJSONLogFormat()
 	gin.SetMode(gin.ReleaseMode)
 
 	r := gin.New()

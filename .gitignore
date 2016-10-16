@@ -1,5 +1,6 @@
 .vscode/
 vendor/
+.env
 
 gin-api-demo
 

@@ -67,6 +67,7 @@ $ curl -i http://localhost:8080/users/2
 - [x] Cross-origin-request headers
 - [x] Continuous integration
 - [x] JSON logging
+- [x] Env var configuration
 
 ## Todo:
 - [ ] JWT token authorization
@@ -80,7 +81,7 @@ $ curl -i http://localhost:8080/users/2
 - [ ] Database migrations
 - [ ] Continuous deployment
 - [ ] Command line interface - run server, run migrations, start db console, etc
-- [ ] Env var configuration
+- [ ] CLI with commands for migration, db drop/create/reset
 
 ## Research:
 - [ ] Client side query language - a la GraphQL/Falkor/Datomic
