@@ -1,29 +1,43 @@
-hash: e21454a8b4b8430fec43d8aa89ffc09baa0533b90d8816386582bb19c5f1f074
-updated: 2016-10-15T16:46:22.124797267-07:00
+hash: 2d2fe2251f275885c29a11e7b09aa983a20e0eca529b42e220c49c64a22c63d9
+updated: 2016-10-15T18:12:58.191348756-07:00
 imports:
 - name: github.com/gin-gonic/gin
-  version: d6425f1692d4aa170ece887b62bb75c9c4da5829
+  version: 2dae550eb5392006a4582ce9c90016a9b5a74e8b
   subpackages:
   - binding
   - render
+- name: github.com/golang/protobuf
+  version: 2402d76f3d41f928c7902a765dfc872356dd3aad
+  subpackages:
+  - proto
 - name: github.com/manucorporat/sse
-  version: c142f0f1baea5cef7f98a8a6c222f6134368c1f5
-- name: github.com/mattn/go-colorable
-  version: d67e0b7d1797975196499f79bcc322c08b9f218b
-- name: github.com/mattn/go-isatty
-  version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
+  version: ee05b128a739a0fb76c7ebd3ae4810c1de808d6d
 - name: github.com/pborman/uuid
-  version: 3d4f2ba23642d3cfd06bd4b54cf03d99d95c0f1b
+  version: a97ce2ca70fa5a848076093f05e639a89ca34d06
 - name: github.com/Sirupsen/logrus
-  version: 539d4dc034c079a7188b5d4ca9650632d73c66e8
+  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
 - name: golang.org/x/net
-  version: 3cffabab72adf04f8e3b01c5baf775361837b5fe
+  version: f315505cf3349909cdf013ea56690da34e96a451
   subpackages:
   - context
 - name: golang.org/x/sys
   version: f64b50fbea64174967a8882830d621a18ee1548e
   subpackages:
   - unix
-- name: gopkg.in/bluesuncorp/validator.v5
-  version: df95f9de27b8022e57f8ce09448cee6b1170bb3d
-testImports: []
+- name: gopkg.in/go-playground/validator.v8
+  version: c193cecd124b5cc722d7ee5538e945bdb3348435
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib

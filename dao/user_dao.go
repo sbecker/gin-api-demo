@@ -11,8 +11,8 @@ import (
 var users []models.User
 
 func InitDb() {
-	users = append(users, models.User{DefaultModel: models.DefaultModel{Id: "abc", ObjectType: "user"}, AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
-	users = append(users, models.User{DefaultModel: models.DefaultModel{Id: "xyz", ObjectType: "user"}, AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
+	users = append(users, models.User{DefaultModel: models.DefaultModel{ID: "abc", ObjectType: "user"}, AuthToken: "userA", Email: "userA@example.com", DOB: "01/23/1984", FavoriteCity: "Dallas"})
+	users = append(users, models.User{DefaultModel: models.DefaultModel{ID: "xyz", ObjectType: "user"}, AuthToken: "userB", Email: "userB@example.com", DOB: "02/27/1991", FavoriteCity: "Portland", Admin: true})
 }
 
 func GetAllUsers(currentUser models.User) []models.User {
@@ -24,18 +24,18 @@ func GetAllUsers(currentUser models.User) []models.User {
 	// if not admin, only return itself
 	var results []models.User
 	for _, u := range users {
-		if u.Id == currentUser.Id {
+		if u.ID == currentUser.ID {
 			results = append(results, u)
 		}
 	}
 	return results
 }
 
-func GetUserById(id string, currentUser models.User) (models.User, error) {
+func GetUserByID(id string, currentUser models.User) (models.User, error) {
 	// if not admin, make only itself findable
 	if !currentUser.Admin {
 		for _, u := range users {
-			if u.Id == id && u.Id == currentUser.Id {
+			if u.ID == id && u.ID == currentUser.ID {
 				return u, nil
 			}
 		}
@@ -43,7 +43,7 @@ func GetUserById(id string, currentUser models.User) (models.User, error) {
 	}
 
 	for _, u := range users {
-		if u.Id == id {
+		if u.ID == id {
 			return u, nil
 		}
 	}

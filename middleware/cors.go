@@ -2,7 +2,7 @@ package middleware
 
 import "github.com/gin-gonic/gin"
 
-// from https://github.com/gin-gonic/gin/issues/29#issuecomment-89132826
+// CORS middleware from https://github.com/gin-gonic/gin/issues/29#issuecomment-89132826
 func CORS(c *gin.Context) {
 	c.Writer.Header().Set("Access-Control-Allow-Origin", "*") // allow any origin domain
 	// c.Writer.Header().Set("Access-Control-Allow-Origin", "http://domain.com") // uncomment to restrict to single domain

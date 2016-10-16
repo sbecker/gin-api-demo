@@ -1,0 +1,24 @@
+machine:
+  environment:
+    IMPORT_PATH: "$HOME/.go_workspace/src/github.com/$CIRCLE_PROJECT_USERNAME"
+    APP_PATH: "$IMPORT_PATH/$CIRCLE_PROJECT_REPONAME"
+    GOROOT: ${HOME}/go
+    PATH: ${GOROOT}/bin:${PATH}
+  post:
+    - wget https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz
+    - tar zxvf go1.7.1.linux-amd64.tar.gz
+
+    - wget https://github.com/Masterminds/glide/releases/download/v0.12.2/glide-v0.12.2-linux-amd64.tar.gz
+    - tar zxvf glide-v0.12.2-linux-amd64.tar.gz
+    - mv linux-amd64/glide ~/bin/
+
+dependencies:
+  override:
+    - mkdir -p "$IMPORT_PATH"
+    - ln -sf "$HOME/$CIRCLE_PROJECT_REPONAME" "$APP_PATH"
+    - cd $APP_PATH && glide install
+    - cd $APP_PATH && go build -v
+
+test:
+  override:
+    - cd "$APP_PATH" && go test -v -race -cover $(glide nv)

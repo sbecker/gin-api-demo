@@ -55,15 +55,13 @@ func NewUsersSubsetJSON(users []models.User, URL string) UsersSubsetJSON {
 func SerializeUsers(users []models.User, currentUser models.User, URL string) interface{} {
 	if currentUser.Admin {
 		return NewUsersJSON(users, URL)
-	} else {
-		return NewUsersSubsetJSON(users, URL)
 	}
+	return NewUsersSubsetJSON(users, URL)
 }
 
 func SerializeUser(user models.User, currentUser models.User) interface{} {
 	if currentUser.Admin {
 		return user
-	} else {
-		return NewUserSubset(user)
 	}
+	return NewUserSubset(user)
 }
