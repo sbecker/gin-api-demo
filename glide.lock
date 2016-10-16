@@ -1,5 +1,5 @@
-hash: 2d2fe2251f275885c29a11e7b09aa983a20e0eca529b42e220c49c64a22c63d9
-updated: 2016-10-15T18:12:58.191348756-07:00
+hash: e42ed63659039e561e39c8574a7a389fa80fd3205fb8daea08c2f0f2e9f0ac1e
+updated: 2016-10-15T22:21:54.619989299-07:00
 imports:
 - name: github.com/gin-gonic/gin
   version: 2dae550eb5392006a4582ce9c90016a9b5a74e8b
@@ -10,6 +10,8 @@ imports:
   version: 2402d76f3d41f928c7902a765dfc872356dd3aad
   subpackages:
   - proto
+- name: github.com/joho/godotenv
+  version: a01a834e1654b4c9ca5b3ad05159445cc9c7ad08
 - name: github.com/manucorporat/sse
   version: ee05b128a739a0fb76c7ebd3ae4810c1de808d6d
 - name: github.com/pborman/uuid
