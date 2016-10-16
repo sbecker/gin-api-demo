@@ -6,13 +6,24 @@ import (
 	"github.com/sbecker/gin-api-demo/serializers"
 )
 
-func GetAllUsers(c *gin.Context) {
+type UserResource struct {
+}
+
+func NewUserResource(e *gin.Engine) {
+	u := UserResource{}
+
+	// Setup Routes
+	e.GET("/users", u.getAllUsers)
+	e.GET("/users/:id", u.getUserByID)
+}
+
+func (r *UserResource) getAllUsers(c *gin.Context) {
 	currentUser := getCurrentUser(c)
 	users := dao.GetAllUsers(currentUser)
 	c.JSON(200, serializers.SerializeUsers(users, currentUser, "/users"))
 }
 
-func GetUserByID(c *gin.Context) {
+func (r *UserResource) getUserByID(c *gin.Context) {
 	currentUser := getCurrentUser(c)
 
 	id, err := getStringParam(c, "id")

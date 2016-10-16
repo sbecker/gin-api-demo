@@ -23,5 +23,5 @@ func getStringParam(c *gin.Context, name string) (string, error) {
 }
 
 func getCurrentUser(c *gin.Context) models.User {
-	return c.MustGet("currentUser").(models.User)
+	return c.MustGet("user").(models.User)
 }

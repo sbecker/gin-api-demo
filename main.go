@@ -5,18 +5,24 @@ import (
 	"github.com/sbecker/gin-api-demo/dao"
 	"github.com/sbecker/gin-api-demo/middleware"
 	"github.com/sbecker/gin-api-demo/resources"
+	"github.com/sbecker/gin-api-demo/util"
 )
 
 func main() {
 	dao.InitDb()
 
-	r := gin.Default()
-	r.Use(middleware.RequestID)
-	r.Use(middleware.Auth)
-	r.Use(middleware.CORS)
+	util.UseJSONLogFormat()
+	gin.SetMode(gin.ReleaseMode)
 
-	r.GET("/users", resources.GetAllUsers)
-	r.GET("/users/:id", resources.GetUserByID)
+	r := gin.New()
+
+	r.Use(middleware.JSONLogMiddleware())
+	r.Use(gin.Recovery())
+	r.Use(middleware.RequestID(middleware.RequestIDOptions{AllowSetting: false}))
+	r.Use(middleware.Auth())
+	r.Use(middleware.CORS(middleware.CORSOptions{}))
+
+	resources.NewUserResource(r)
 
 	r.Run(":8080") // listen and serve on 0.0.0.0:8080
 }
