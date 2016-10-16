@@ -1,5 +1,5 @@
-hash: e21454a8b4b8430fec43d8aa89ffc09baa0533b90d8816386582bb19c5f1f074
-updated: 2016-10-15T16:46:22.124797267-07:00
+hash: feaf26117e532fea640c16ad5418593eb799627bd0b4aef19824e24664fac92b
+updated: 2016-10-15T17:34:54.891064587-07:00
 imports:
 - name: github.com/gin-gonic/gin
   version: d6425f1692d4aa170ece887b62bb75c9c4da5829
@@ -16,6 +16,10 @@ imports:
   version: 3d4f2ba23642d3cfd06bd4b54cf03d99d95c0f1b
 - name: github.com/Sirupsen/logrus
   version: 539d4dc034c079a7188b5d4ca9650632d73c66e8
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
 - name: golang.org/x/net
   version: 3cffabab72adf04f8e3b01c5baf775361837b5fe
   subpackages:
@@ -26,4 +30,12 @@ imports:
   - unix
 - name: gopkg.in/bluesuncorp/validator.v5
   version: df95f9de27b8022e57f8ce09448cee6b1170bb3d
-testImports: []
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 2df174808ee097f90d259e432cc04442cf60be21
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
