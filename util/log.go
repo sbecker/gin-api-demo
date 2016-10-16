@@ -8,13 +8,12 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	"github.com/thedataguild/faer/util"
 )
 
 // UseJSONLogFormat sets up the JSON log formatter
 func UseJSONLogFormat() {
-	env := util.GetEnv("GIN_ENV", "development")
-	program := util.GetEnv("SERVICE_NAME", "gin-api-demo")
+	env := GetEnv("GIN_ENV", "development")
+	program := GetEnv("SERVICE_NAME", "gin-api-demo")
 
 	log.SetFormatter(&JSONFormatter{
 		Program: program,
