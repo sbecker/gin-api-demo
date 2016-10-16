@@ -61,7 +61,7 @@ $ curl -i http://localhost:8080/users/2
 - [x] token authorization middleware
 - [x] multi-level json serialization - display subset of json objects for non-admin users
 - [x] separation of concerns - models, dao, resources, serializers, authorization
-- [x] Godep for dependency management
+- [x] Glide for dependency management
 - [x] UUIDs instead of integers for primary keys
 - [x] `Request-Id` headers: Each API request has an associated request identifier
 - [x] Cross-origin-request headers
