@@ -21,4 +21,4 @@ dependencies:
 
 test:
   override:
-    - cd "$APP_PATH" && go test -cover $(glide nv)
+    - cd "$APP_PATH" && go test -v -race -cover $(glide nv)
