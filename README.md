@@ -66,6 +66,7 @@ $ curl -i http://localhost:8080/users/2
 - [x] `Request-Id` headers: Each API request has an associated request identifier
 - [x] Cross-origin-request headers
 - [x] Continuous integration
+- [x] JSON logging
 
 ## Todo:
 - [ ] JWT token authorization

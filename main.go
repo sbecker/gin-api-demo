@@ -1,6 +1,7 @@
 package main
 
 import (
+	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/sbecker/gin-api-demo/dao"
 	"github.com/sbecker/gin-api-demo/middleware"
@@ -24,5 +25,8 @@ func main() {
 
 	resources.NewUserResource(r)
 
-	r.Run(":8080") // listen and serve on 0.0.0.0:8080
+	port := util.GetEnv("PORT", "8080")
+	log.Info("Service starting on port " + port)
+
+	r.Run(":" + port) // listen and serve
 }
