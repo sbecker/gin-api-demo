@@ -12,7 +12,7 @@ func GetAllUsers(c *gin.Context) {
 	c.JSON(200, serializers.SerializeUsers(users, currentUser, "/users"))
 }
 
-func GetUserById(c *gin.Context) {
+func GetUserByID(c *gin.Context) {
 	currentUser := getCurrentUser(c)
 
 	id, err := getStringParam(c, "id")
@@ -21,7 +21,7 @@ func GetUserById(c *gin.Context) {
 		return
 	}
 
-	user, err := dao.GetUserById(id, currentUser)
+	user, err := dao.GetUserByID(id, currentUser)
 	if err != nil {
 		c.JSON(404, "Not Found")
 		return

@@ -1,6 +1,6 @@
 package models
 
 type DefaultModel struct {
-	Id         string `json:"id"`
+	ID         string `json:"id"`
 	ObjectType string `json:"object"`
 }
