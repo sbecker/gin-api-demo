@@ -65,6 +65,7 @@ $ curl -i http://localhost:8080/users/2
 - [x] UUIDs instead of integers for primary keys
 - [x] `Request-Id` headers: Each API request has an associated request identifier
 - [x] Cross-origin-request headers
+- [x] Continuous integration
 
 ## Todo:
 - [ ] JWT token authorization
@@ -76,7 +77,6 @@ $ curl -i http://localhost:8080/users/2
 - [ ] Godoc
 - [ ] A test suite
 - [ ] Database migrations
-- [ ] Continuous integration
 - [ ] Continuous deployment
 - [ ] Command line interface - run server, run migrations, start db console, etc
 - [ ] Env var configuration
