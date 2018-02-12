@@ -5,11 +5,14 @@ An example of using the Gin framework in Go to create a JSON api with most of th
 ## Installation
 
 Install [Glide](http://glide.sh/)
+
 ```bash
 curl https://glide.sh/get | sh
 # or, on OSX
 brew install glide
 ```
+
+Check out the project and install it's dependencies
 
 ```bash
 $ go get github.com/sbecker/gin-api-demo
