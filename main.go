@@ -1,12 +1,12 @@
 package main
 
 import (
-	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/sbecker/gin-api-demo/dao"
 	"github.com/sbecker/gin-api-demo/middleware"
 	"github.com/sbecker/gin-api-demo/resources"
 	"github.com/sbecker/gin-api-demo/util"
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {

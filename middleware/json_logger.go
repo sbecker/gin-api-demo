@@ -3,9 +3,9 @@ package middleware
 import (
 	"time"
 
-	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/sbecker/gin-api-demo/util"
+	log "github.com/sirupsen/logrus"
 )
 
 // JSONLogMiddleware logs a gin HTTP request in JSON format, with some additional custom key/values

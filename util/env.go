@@ -3,8 +3,8 @@ package util
 import (
 	"os"
 
-	log "github.com/Sirupsen/logrus"
 	"github.com/joho/godotenv"
+	log "github.com/sirupsen/logrus"
 )
 
 // GetEnv returns an environment variable or a default value if not present

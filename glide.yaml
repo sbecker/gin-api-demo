@@ -2,8 +2,8 @@ package: github.com/sbecker/gin-api-demo
 import:
 - package: github.com/gin-gonic/gin
   version: v1.0
-- package: github.com/Sirupsen/logrus
-  version: v0.10.0
+- package: github.com/sirupsen/logrus
+  version: v1.0.4
 - package: github.com/pborman/uuid
   version: v1.0
 - package: github.com/stretchr/testify

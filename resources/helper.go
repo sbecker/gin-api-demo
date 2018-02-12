@@ -3,9 +3,9 @@ package resources
 import (
 	"strconv"
 
-	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/sbecker/gin-api-demo/models"
+	log "github.com/sirupsen/logrus"
 )
 
 func getIntParam(c *gin.Context, name string) (int64, error) {
