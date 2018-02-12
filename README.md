@@ -4,9 +4,17 @@ An example of using the Gin framework in Go to create a JSON api with most of th
 
 ## Installation
 
+Install [Glide](http://glide.sh/)
+```bash
+curl https://glide.sh/get | sh
+# or, on OSX
+brew install glide
+```
+
 ```bash
 $ go get github.com/sbecker/gin-api-demo
-$ go get github.com/tools/godep
+$ cd $GOPATH/src/github.com/sbecker/gin-api-demo/
+$ glide install
 ```
 
 ## How to run
@@ -15,7 +23,7 @@ In one terminal, run the server:
 
 ```bash
 $ cd $GOPATH/src/github.com/sbecker/gin-api-demo
-$ godep go run main.go
+$ go run main.go
 ```
 
 In another terminal, try making requests:
